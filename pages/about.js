@@ -1,35 +1,38 @@
 import React from 'react';
-import NextLink from 'next/link';
+import { Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+
+   const useStyles = makeStyles({
+ orangeButton: {
+     backgroundColor: 'orange',
+     color: 'white',
+ }, });
 
 export default () => {
+const localClasses = useStyles();
+
     return (
         <div>
-            <nav>
-                <ul>
-                    <li>
-                    <NextLink href="/">Home</NextLink>
-                    </li>
-                    <li>
-                    <NextLink href="/about">About</NextLink>
-                    </li>
-                    <li>
-                    <NextLink href="/privacy-and-policy">Privacy and Policy</NextLink>
-                    </li>
-                    <li>
-                    <NextLink href="/login">Login</NextLink>
-                    </li>
-                    <li>
-                    <NextLink href="/cart">Cart</NextLink>
-                    </li>
-                    <li>
-                    <NextLink href="/product-details">Product Details</NextLink>
-                    </li>
-                    <li>
-                    <NextLink href="/product-list">Product List</NextLink>
-                    </li>
-                </ul>
-            </nav>
         <h1>About us</h1>
+        <Button variant="contained">Default</Button>
+        <Button variant="contained" color="primary">
+            Primary
+        </Button>
+        <Button variant="contained" color="secondary">
+            Secondary
+        </Button>
+        <Button variant="contained" disabled>
+            Disabled
+        </Button>
+        <Button variant="contained" color="primary" href="#contained-buttons">
+            Link
+        </Button>
+        <Button 
+        className={localClasses.orangeButton}
+        variant="contained" 
+        fullWidth>
+            Orange
+        </Button>
         </div>
     );
 };

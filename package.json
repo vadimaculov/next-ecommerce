@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-   "start": "next start",
-   "build": "next build"
+    "start": "next start",
+    "build": "next build"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,7 @@
   "homepage": "https://github.com/vadimaculov/next-ecommerce#readme",
   "dependencies": {
     "@material-ui/core": "^4.9.14",
+    "@material-ui/icons": "^4.9.1",
     "clsx": "^1.1.0",
     "next": "^9.4.1",
     "prop-types": "^15.7.2",
