@@ -14,6 +14,8 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Link from '../src/Link';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -23,7 +25,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   title: {
+    color: 'white',
     display: 'none',
+    padding: '0 2rem',
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
@@ -76,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       display: 'none',
     },
+  },
+  cartIcon: {
+    color: 'white',
   },
 }));
 
@@ -158,6 +165,14 @@ export default function PrimarySearchAppBar() {
         </IconButton>
         <p>Profile</p>
       </MenuItem>
+      <MenuItem>
+        <IconButton aria-label="show 2 product" color="inherit">
+          <Badge badgeContent={2} color="secondary">
+            <ShoppingCartIcon />
+          </Badge>
+        </IconButton>
+      </MenuItem>
+
     </Menu>
   );
 
@@ -176,6 +191,11 @@ export default function PrimarySearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             Material-UI
           </Typography>
+          <Link href="/products">
+            <Typography className={classes.title} variant="h6">
+              Products
+            </Typography>
+          </Link>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
@@ -211,6 +231,13 @@ export default function PrimarySearchAppBar() {
             >
               <AccountCircle />
             </IconButton>
+            <Link href="/cart" className={classes.cartIcon}>
+              <IconButton aria-label="show 2 product" color="inherit">
+                <Badge badgeContent={2} color="secondary">
+                  <ShoppingCartIcon />
+                </Badge>
+              </IconButton>
+            </Link>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
